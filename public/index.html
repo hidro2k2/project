@@ -23,6 +23,38 @@
         <input type="text" id="user-input" placeholder="Nhập tên danh lam...">
         <button id="send-btn">Tìm</button>
     </div>
+
+    <!-- Thêm nhạc nền -->
+    <audio id="background-music" loop>
+        <source src="assets/music/background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Nút play nhạc -->
+    <button id="play-music-btn">Play Music</button>
+
     <script src="script.js"></script>
+    <script>
+        // Xử lý Play/Pause nhạc
+        document.getElementById('play-music-btn').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            
+            if (audio.paused) {
+                audio.play();
+                this.textContent = 'Pause Music'; // Khi nhạc bắt đầu, thay đổi chữ thành "Pause Music"
+            } else {
+                audio.pause();
+                this.textContent = 'Play Music'; // Nếu nhạc đang phát, tạm dừng và đổi lại chữ thành "Play Music"
+            }
+        });
+
+        // Thử phát nhạc tự động khi trang được tải
+        window.onload = function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch((error) => {
+                console.log('Không thể phát nhạc tự động: ' + error);
+            });
+        };
+    </script>
 </body>
 </html>
