@@ -1,0 +1,13 @@
+{
+    "name": "landmark-chat",
+    "version": "1.0.0",
+    "description": "Ứng dụng chat danh lam thắng cảnh Thái Nguyên",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "node server/server.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2"
+    }
+}
