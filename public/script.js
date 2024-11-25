@@ -111,3 +111,19 @@ suggestions.addEventListener("click", (event) => {
         suggestions.style.display = "none"; // Ẩn gợi ý khi chọn gợi ý
     }
 });
+
+// Đường dẫn tương đối tới file data.json
+fetch('assets/data.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Dữ liệu JSON:', data);
+        // Xử lý dữ liệu JSON tại đây
+    })
+    .catch(error => {
+        console.error('Có lỗi xảy ra khi tải dữ liệu:', error);
+    });
