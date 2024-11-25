@@ -113,7 +113,7 @@ suggestions.addEventListener("click", (event) => {
 });
 
 // Đường dẫn tương đối tới file data.json
-fetch('assets/data.json')
+fetch('./assets/data.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
