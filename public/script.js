@@ -127,3 +127,66 @@ fetch('./assets/data.json')
     .catch(error => {
         console.error('Có lỗi xảy ra khi tải dữ liệu:', error);
     });
+
+// Dữ liệu JSON
+const places = [
+    {
+        "name": "Hồ Núi Cốc",
+        "info": "Hồ Núi Cốc là địa danh nổi tiếng tại Thái Nguyên, nằm ở huyện Đại Từ. Đây là một hồ nước nhân tạo gắn liền với truyền thuyết tình yêu Chàng Cốc và Nàng Công.",
+        "image": "assets/images/ho_nui_coc.jpg"
+    },
+    {
+        "name": "Hang Phượng Hoàng",
+        "info": "Hang Phượng Hoàng thuộc huyện Võ Nhai, là một danh thắng nổi tiếng với khung cảnh thiên nhiên hùng vĩ và câu chuyện lịch sử đầy thú vị.",
+        "image": "assets/images/hang_phuong_hoang.jpg"
+    },
+    {
+        "name": "Suối Mỏ Gà",
+        "info": "Suối Mỏ Gà nằm gần Hang Phượng Hoàng, là điểm đến lý tưởng với làn nước mát lành giữa thiên nhiên hoang sơ.",
+        "image": "assets/images/suoi_mo_ga.jpg"
+    },
+    {
+        "name": "Đền Đuổm",
+        "info": "Đền Đuổm tọa lạc tại huyện Phú Lương, là nơi thờ tự Lưu Nhân Chú, một vị tướng nổi tiếng thời nhà Lê.",
+        "image": "assets/images/den_duom.jpg"
+    },
+    {
+        "name": "Suối Cửa Tử",
+        "info": "Suối Cửa Tử ở huyện Đại Từ là một dòng suối trong xanh, nơi thu hút du khách yêu thích trekking và khám phá thiên nhiên.",
+        "image": "assets/images/suoi_cua_tu.jpg"
+    },
+    {
+        "name": "Thác Mưa Rơi",
+        "info": "Thác Mưa Rơi nằm trong huyện Võ Nhai, với dòng thác trắng xóa đổ xuống tạo nên khung cảnh nên thơ, yên bình.",
+        "image": "assets/images/thac_mua_roi.jpg"
+    },
+    {
+        "name": "Đồi chè Tân Cương",
+        "info": "Đồi chè Tân Cương thuộc thành phố Thái Nguyên, nổi tiếng với những đồi chè xanh mướt và chất lượng chè hảo hạng.",
+        "image": "assets/images/doi_che_tan_cuong.jpg"
+    },
+    {
+        "name": "Động Linh Sơn",
+        "info": "Động Linh Sơn nằm trong lòng núi, mang vẻ đẹp huyền bí và là điểm tham quan hấp dẫn tại thành phố Thái Nguyên.",
+        "image": "assets/images/dong_linh_son.jpg"
+    },
+    {
+        "name": "Suối Lạnh",
+        "info": "Suối Lạnh ở thành phố Phổ Yên là nơi nghỉ dưỡng lý tưởng với khung cảnh thiên nhiên trong lành, mát mẻ.",
+        "image": "assets/images/suoi_lanh.jpg"
+    }
+];
+
+// Hiển thị gợi ý từ dữ liệu JSON
+const suggestionsDiv = document.getElementById('suggestions');
+places.forEach(place => {
+    const suggestion = document.createElement('div');
+    suggestion.classList.add('suggestion-item');
+    suggestion.innerHTML = `
+        <h3>${place.name}</h3>
+        <p>${place.info}</p>
+        <img src="${place.image}" alt="${place.name}" style="width: 200px; height: auto;">
+    `;
+    suggestionsDiv.appendChild(suggestion);
+});
+
