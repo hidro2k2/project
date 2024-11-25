@@ -41,43 +41,39 @@
             
             if (audio.paused) {
                 audio.play();
-                this.textContent = 'Pause Music'; // Khi nhạc bắt đầu, thay đổi chữ thành "Pause Music"
+                this.textContent = 'Dừng nhạc';
             } else {
                 audio.pause();
-                this.textContent = 'Play Music'; // Nếu nhạc đang phát, tạm dừng và đổi lại chữ thành "Play Music"
+                this.textContent = 'Phát nhạc';
             }
         });
 
-        // Thử phát nhạc tự động khi trang được tải
-        window.onload = function() {
-            const audio = document.getElementById('background-music');
-            audio.play().catch((error) => {
-                console.log('Không thể phát nhạc tự động: ' + error);
-            });
-        };
     </script>
     <style>
-                #play-music-btn {
-            position: fixed; /* Giữ nút ở vị trí cố định trên màn hình */
-            top: 20px; /* Khoảng cách từ phía trên */
-            right: 20px; /* Khoảng cách từ bên phải */
-            padding: 10px 20px; /* Khoảng cách bên trong nút */
-            background-color: #4CAF50; /* Màu nền nút */
-            color: white; /* Màu chữ */
-            border: none; /* Không viền */
-            border-radius: 5px; /* Bo tròn góc */
-            font-size: 16px; /* Kích thước chữ */
-            cursor: pointer; /* Hiển thị con trỏ dạng tay khi di chuột lên */
-            transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền khi hover */
-        }
+            #play-music-btn 
+            {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
 
-        #play-music-btn:hover {
-            background-color: #45a049; /* Màu nền khi hover */
-        }
+            #play-music-btn:hover 
+            {
+                background-color: #45a049;
+            }
 
-        #play-music-btn:focus {
-            outline: none; /* Bỏ outline khi nút được nhấn */
-        }
+            #play-music-btn:focus 
+            {
+                outline: none;
+            }
     </style>
 </body>
 </html>
