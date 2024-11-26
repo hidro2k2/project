@@ -109,9 +109,8 @@ suggestions.addEventListener("click", (event) => {
 });
 
 //gợi ý biến mất khi nhấp ra ngoài
-document.addEventListener('click', (event) => {
-    if (!suggestions.contains(event.target) && event.target !== searchInput) {
-        suggestions.style.display = 'none';
-    }
-});
-
+// document.addEventListener('click', (event) => {
+//     if (!suggestions.contains(event.target) && event.target !== searchInput) {
+//         suggestions.style.display = 'none';
+//     }
+// });
