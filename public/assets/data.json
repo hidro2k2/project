@@ -16,32 +16,37 @@
     },
     {
         "name": "Đền Đuổm",
-        "info": "Đền Đuổm tọa lạc tại huyện Phú Lương, là nơi thờ tự Lưu Nhân Chú, một vị tướng nổi tiếng thời nhà Lê.",
+        "info": "Đền Đuổm là ngôi đền thờ Dương Tự Minh (Thánh Đuổm) còn gọi là Đức Thánh Đuổm hay Cao Sơn Quý Minh - một vị tướng người Tày, phò mã nhà Lý, đã có nhiều công trạng. Người dân tộc Tày, người làng Quán Triều, phủ Phú Lương, tỉnh Thái Nguyên (nay là phường Quan Triều, thành phố Thái Nguyên)",
         "image": "assets/images/den_duom.jpg"
     },
     {
         "name": "Suối Cửa Tử",
-        "info": "Suối Cửa Tử ở huyện Đại Từ là một dòng suối trong xanh, nơi thu hút du khách yêu thích trekking và khám phá thiên nhiên.",
+        "info": "Một con suối hoang sơ nằm ở Thái Nguyên, cách trung tâm thành phố khoảng 45km. Nước suối trong vắt, mát lạnh và có thể nhìn thấy tận đáy",
         "image": "assets/images/suoi_cua_tu.jpg"
     },
     {
         "name": "Thác Mưa Rơi",
-        "info": "Thác Mưa Rơi nằm trong huyện Võ Nhai, với dòng thác trắng xóa đổ xuống tạo nên khung cảnh nên thơ, yên bình.",
+        "info": "Thác Mưa Rơi là một thắng cảnh đẹp nằm ở tỉnh Thái Nguyên, Việt Nam. Thác có tên gọi thân thuộc của dân tộc Tày là Thác Mưa Rơi vì vào những ngày tạnh ráo, chỉ có một dòng thác nhỏ đổ từ vách đá cao xuống sông Thần Sa",
         "image": "assets/images/thac_mua_roi.jpg"
     },
     {
         "name": "Đồi chè Tân Cương",
-        "info": "Đồi chè Tân Cương thuộc thành phố Thái Nguyên, nổi tiếng với những đồi chè xanh mướt và chất lượng chè hảo hạng.",
+        "info": "Đồi chè Tân Cương Thái Nguyên là một điểm đến nổi tiếng với cảnh quan thiên nhiên tươi đẹp và những đồi chè xanh mướt. Nằm cách trung tâm thành phố Thái Nguyên khoảng 10km về phía Tây Nam, đồi chè Tân Cương không chỉ nổi tiếng với sản phẩm chè ngon mà còn là nơi lý tưởng để du khách tham quan và tận hưởng không khí trong lành",
         "image": "assets/images/doi_che_tan_cuong.jpg"
     },
     {
         "name": "Động Linh Sơn",
-        "info": "Động Linh Sơn nằm trong lòng núi, mang vẻ đẹp huyền bí và là điểm tham quan hấp dẫn tại thành phố Thái Nguyên.",
+        "info": "Đồng Linh Sơn là một hang động nổi tiếng nằm ở xóm Núi Hột, xã Linh Sơn, thành phố Thái Nguyên, tỉnh Thái Nguyên, Việt Nam. Hang động này được Bộ Văn hóa, Thể thao và Du lịch xếp hạng là di tích lịch sử quốc gia vào năm 1999",
         "image": "assets/images/dong_linh_son.jpg"
     },
     {
         "name": "Suối Lạnh",
-        "info": "Suối Lạnh ở thành phố Phổ Yên là nơi nghỉ dưỡng lý tưởng với khung cảnh thiên nhiên trong lành, mát mẻ.",
+        "info": "Hồ Suối Lạnh thuộc xã Thành Công, huyện Phổ Yên, tiếp giáp với Sóc Sơn, Hà Nội. Hồ với diện tích gần 50 ha, có suối nước trong, có đồi núi, rừng cây tạo cảnh quan non xanh, đây là nơi rất thích hợp để du khách du ngoạn, tận hưởng bình yên khi hòa mình cùng thiên nhiên mây nước",
         "image": "assets/images/suoi_lanh.jpg"
+    },
+    {
+        "name": "Núi Văn - Núi Võ",
+        "info": "Núi Văn - Núi Võ là một di tích thờ danh tướng Lưu Nhân Chú - thuộc tỉnh Thái Nguyên. Quần thể di tích gồm hai ngọn núi Văn, núi Võ - biểu tượng cho sự dũng trí của người anh hùng năm xưa. Núi Văn nằm trên đất hai xã Văn Yên và Ký Phú (Đại Từ). Núi Văn là ngọn núi đá vôi cao hơn trăm mét, từ phía đông nhìn lại núi trông tựa hình chiếc mũ cánh chuồn của quan văn ngày xưa",
+        "image": "assets/images/nuivan_nuivo.jpg"
     }
 ]
