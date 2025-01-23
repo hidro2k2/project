@@ -114,3 +114,114 @@ suggestions.addEventListener("click", (event) => {
 //         suggestions.style.display = 'none';
 //     }
 // });
+
+const GEMINI_API_KEY = "AIzaSyByG9RXNidnbVYiQMkXfN7FqhdX5wfx7JA"; // Thay thế bằng API key Gemini của bạn
+const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`;
+
+let currentChat = []; // Lưu trữ cuộc trò chuyện hiện tại
+
+// Function to send a message to Gemini API
+async function sendGeminiMessage() {
+    const userInput = document.getElementById("gemini-user-input").value;
+    if (!userInput.trim()) return;
+
+    // Thêm tin nhắn của người dùng vào lịch sử
+    currentChat.push({ role: "user", parts: [{ text: userInput }] });
+
+    // Hiển thị tin nhắn của người dùng
+    appendGeminiMessage("user", userInput);
+
+    // Gửi yêu cầu đến Gemini API
+    const response = await fetch(GEMINI_API_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            contents: currentChat,
+        }),
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        const botMessage = data.candidates[0].content.parts[0].text || "No response from Gemini.";
+        // Thêm tin nhắn của AI vào lịch sử
+        currentChat.push({ role: "model", parts: [{ text: botMessage }] });
+        appendGeminiMessage("bot", botMessage);
+    } else {
+        const errorData = await response.json();
+        appendGeminiMessage("bot", `Error: ${errorData.error.message}`);
+    }
+
+    // Xóa input
+    document.getElementById("gemini-user-input").value = "";
+}
+
+// Function to upload and process an image using Gemini API
+async function uploadGeminiImage() {
+    const fileInput = document.getElementById("gemini-image-upload");
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+        const base64Image = event.target.result.split(",")[1];
+
+        // Send image to Gemini API
+        const response = await fetch(GEMINI_API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                contents: [
+                    {
+                        parts: [
+                            {
+                                text: "Describe this image:",
+                            },
+                            {
+                                inlineData: {
+                                    mimeType: file.type,
+                                    data: base64Image,
+                                },
+                            },
+                        ],
+                    },
+                ],
+            }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            const botMessage = data.candidates[0].content.parts[0].text || "No response from Gemini.";
+            appendGeminiMessage("bot", botMessage);
+        } else {
+            const errorData = await response.json();
+            appendGeminiMessage("bot", `Error: ${errorData.error.message}`);
+        }
+    };
+    reader.readAsDataURL(file);
+}
+
+// Function to append a message to the chat window
+function appendGeminiMessage(sender, message) {
+    const chatWindow = document.getElementById("gemini-chat-window");
+    const messageElement = document.createElement("div");
+    messageElement.className = sender === "user" ? "text-right" : "text-left";
+    messageElement.innerHTML = `
+        <div class="inline-block p-2 rounded-lg ${sender === "user" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-800"}">
+            ${message}
+        </div>
+    `;
+    chatWindow.appendChild(messageElement);
+    chatWindow.scrollTop = chatWindow.scrollHeight; // Auto-scroll to bottom
+}
+
+// Send message when user presses Enter key
+document.getElementById("gemini-user-input").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của phím Enter
+        sendGeminiMessage();
+    }
+});
