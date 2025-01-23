@@ -115,8 +115,10 @@ suggestions.addEventListener("click", (event) => {
 //     }
 // });
 
+const GEMINI_API_URL = `https://cors-anywhere.herokuapp.com/https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`;
+
 const GEMINI_API_KEY = "AIzaSyByG9RXNidnbVYiQMkXfN7FqhdX5wfx7JA"; // Thay thế bằng API key Gemini của bạn
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`;
+// const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`;
 
 let currentChat = []; // Lưu trữ cuộc trò chuyện hiện tại
 
